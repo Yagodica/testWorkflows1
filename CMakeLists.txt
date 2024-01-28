@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 
-project(my_project)
+project(main)
 
-set(CMAKE_SYSTEM_NAME Linux)
-set(CMAKE_C_COMPILER gcc)
-set(CMAKE_CXX_COMPILER g++)
+add_executable(main main.cpp)
 
-add_executable(my_program test1.cpp)
+install(TARGETS main)
+
+enable_testing()
+add_test(NAME main COMMAND main)
